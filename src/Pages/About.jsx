@@ -12,7 +12,7 @@ const Header = memo(() => (
         data-aos="zoom-in-up"
         data-aos-duration="600"
       >
-        About Me
+        Sobre Mi
       </h2>
     </div>
     <p 
@@ -21,7 +21,7 @@ const Header = memo(() => (
       data-aos-duration="800"
     >
       <Sparkles className="w-5 h-5 text-purple-400" />
-      Transforming ideas into digital experiences
+      Transformando ideas en soluciones digitales
       <Sparkles className="w-5 h-5 text-purple-400" />
     </p>
   </div>
@@ -50,7 +50,7 @@ const ProfileImage = memo(() => (
           <div className="absolute inset-0 bg-gradient-to-t from-purple-500/20 via-transparent to-blue-500/20 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 hidden sm:block" />
           
           <img
-            src="/Photo.png"
+            src="/Perfil.jpg"
             alt="Profile"
             className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-2"
             loading="lazy"
@@ -118,7 +118,7 @@ const AboutPage = () => {
     const storedProjects = JSON.parse(localStorage.getItem("projects") || "[]");
     const storedCertificates = JSON.parse(localStorage.getItem("certificates") || "[]");
     
-    const startDate = new Date("2021-11-06");
+    const startDate = new Date("2024-01-01");
     const today = new Date();
     const experience = today.getFullYear() - startDate.getFullYear() -
       (today < new Date(today.getFullYear(), startDate.getMonth(), startDate.getDate()) ? 1 : 0);
@@ -160,24 +160,24 @@ const AboutPage = () => {
       icon: Code,
       color: "from-[#6366f1] to-[#a855f7]",
       value: totalProjects,
-      label: "Total Projects",
-      description: "Innovative web solutions crafted",
+      label: "Total Proyectos",
+      description: "Proyectos completados y en progreso",
       animation: "fade-right",
     },
     {
       icon: Award,
       color: "from-[#a855f7] to-[#6366f1]",
       value: totalCertificates,
-      label: "Certificates",
-      description: "Professional skills validated",
+      label: "Certificados",
+      description: "Cursos y certificaciones completadas",
       animation: "fade-up",
     },
     {
       icon: Globe,
       color: "from-[#6366f1] to-[#a855f7]",
       value: YearExperience,
-      label: "Years of Experience",
-      description: "Continuous learning journey",
+      label: "Años de Experiencia",
+      description: "Aprendiendo y mejorando cada día",
       animation: "fade-left",
     },
   ], [totalProjects, totalCertificates, YearExperience]);
@@ -198,14 +198,14 @@ const AboutPage = () => {
               data-aos-duration="1000"
             >
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
-                Hello, I'm
+                Hola, soy
               </span>
               <span 
                 className="block mt-2 text-gray-200"
                 data-aos="fade-right"
                 data-aos-duration="1300"
               >
-                Eki Zulfar Rachman
+                Luis Márquez
               </span>
             </h2>
             
@@ -214,20 +214,19 @@ const AboutPage = () => {
               data-aos="fade-right"
               data-aos-duration="1500"
             >
-              seorang siswa Teknik Jaringan Komputer dan Telekomunikasi yang
-              tertarik dalam pengembangan Front-End. Saya berfokus pada
-              menciptakan pengalaman digital yang menarik dan selalu berusaha
-              memberikan solusi terbaik dalam setiap proyek.
+              Estudiante de Ingenieria de Software, interesado en el desarrollo 
+              de aplicaciones web y móviles. Me apasiona la tecnología y la
+              programación, siempre buscando aprender y mejorar mis habilidades.
             </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 lg:gap-4 lg:px-0 w-full">
-              <a href="https://drive.google.com/drive/folders/1BOm51Grsabb3zj6Xk27K-iRwI1zITcpo" className="w-full lg:w-auto">
+              <a href="https://drive.google.com/uc?id=1q3cLIVWZdGt9R_JKVgwc1CiLKQOiGGkE&export=download" className="w-full lg:w-auto">
               <button 
                 data-aos="fade-up"
                 data-aos-duration="800"
                 className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 shadow-lg hover:shadow-xl animate-bounce-slow"
               >
-                <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Download CV
+                <FileText className="w-4 h-4 sm:w-5 sm:h-5" /> Descargar CV
               </button>
               </a>
               <a href="#Portofolio" className="w-full lg:w-auto">
@@ -236,7 +235,7 @@ const AboutPage = () => {
                 data-aos-duration="1000"
                 className="w-full lg:w-auto sm:px-6 py-2 sm:py-3 rounded-lg border border-[#a855f7]/50 text-[#a855f7] font-medium transition-all duration-300 hover:scale-105 flex items-center justify-center lg:justify-start gap-2 hover:bg-[#a855f7]/10 animate-bounce-slow delay-200"
               >
-                <Code className="w-4 h-4 sm:w-5 sm:h-5" /> View Projects
+                <Code className="w-4 h-4 sm:w-5 sm:h-5" /> Ver Proyectos
               </button>
               </a>
             </div>
