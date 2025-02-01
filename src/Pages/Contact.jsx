@@ -131,7 +131,7 @@ const ContactPage = () => {
             </div>
 
             <form 
-              action="https://formsubmit.co/luis1marquez0@gmail.com"
+              action="https://formsubmit.co/e73767964e691d50d0079007c04beae8"
               method="POST"
               onSubmit={handleSubmit}
               className="space-y-6"
@@ -139,6 +139,7 @@ const ContactPage = () => {
               {/* FormSubmit Configuration */}
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value="https://portafolio-e76fa.web.app/thank-you" />
 
               <div
                 data-aos="fade-up"
