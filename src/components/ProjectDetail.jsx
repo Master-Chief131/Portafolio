@@ -61,7 +61,7 @@ const ProjectStats = ({ project }) => {
         </div>
         <div className="flex-grow">
           <div className="text-lg md:text-xl font-semibold text-blue-200">{techStackCount}</div>
-          <div className="text-[10px] md:text-xs text-gray-400">Total Teknologi</div>
+          <div className="text-[10px] md:text-xs text-gray-400">Total de Tecnología</div>
         </div>
       </div>
 
@@ -71,7 +71,7 @@ const ProjectStats = ({ project }) => {
         </div>
         <div className="flex-grow">
           <div className="text-lg md:text-xl font-semibold text-purple-200">{featuresCount}</div>
-          <div className="text-[10px] md:text-xs text-gray-400">Fitur Utama</div>
+          <div className="text-[10px] md:text-xs text-gray-400">Total de Características</div>
         </div>
       </div>
     </div>
@@ -82,9 +82,9 @@ const handleGithubClick = (githubLink) => {
   if (githubLink === 'Private') {
     Swal.fire({
       icon: 'info',
-      title: 'Source Code Private',
-      text: 'Maaf, source code untuk proyek ini bersifat privat.',
-      confirmButtonText: 'Mengerti',
+      title: 'Codigo Fuente Privado',
+      text: 'El código fuente de este proyecto es privado y no está disponible en GitHub.',
+      confirmButtonText: 'Entendido',
       confirmButtonColor: '#3085d6',
       background: '#030014',
       color: '#ffffff'
@@ -110,7 +110,7 @@ const ProjectDetails = () => {
         ...selectedProject,
         Features: selectedProject.Features || [],
         TechStack: selectedProject.TechStack || [],
-        Github: selectedProject.Github || 'https://github.com/EkiZR',
+        Github: selectedProject.Github || 'https://github.com/Master-Chief131',
       };
       setProject(enhancedProject);
     }
@@ -121,7 +121,7 @@ const ProjectDetails = () => {
       <div className="min-h-screen bg-[#030014] flex items-center justify-center">
         <div className="text-center space-y-6 animate-fadeIn">
           <div className="w-16 h-16 md:w-24 md:h-24 mx-auto border-4 border-blue-500/30 border-t-blue-500 rounded-full animate-spin" />
-          <h2 className="text-xl md:text-3xl font-bold text-white">Loading Project...</h2>
+          <h2 className="text-xl md:text-3xl font-bold text-white">Cargando Proyecto...</h2>
         </div>
       </div>
     );
@@ -147,10 +147,10 @@ const ProjectDetails = () => {
               className="group inline-flex items-center space-x-1.5 md:space-x-2 px-3 md:px-5 py-2 md:py-2.5 bg-white/5 backdrop-blur-xl rounded-xl text-white/90 hover:bg-white/10 transition-all duration-300 border border-white/10 hover:border-white/20 text-sm md:text-base"
             >
               <ArrowLeft className="w-4 h-4 md:w-5 md:h-5 group-hover:-translate-x-1 transition-transform" />
-              <span>Back</span>
+              <span>Volver</span>
             </button>
             <div className="flex items-center space-x-1 md:space-x-2 text-sm md:text-base text-white/50">
-              <span>Projects</span>
+              <span>Proyectos</span>
               <ChevronRight className="w-3 h-3 md:w-4 md:h-4" />
               <span className="text-white/90 truncate">{project.Title}</span>
             </div>
@@ -205,7 +205,7 @@ const ProjectDetails = () => {
               <div className="space-y-4 md:space-y-6">
                 <h3 className="text-lg md:text-xl font-semibold text-white/90 mt-[3rem] md:mt-0 flex items-center gap-2 md:gap-3">
                   <Code2 className="w-4 h-4 md:w-5 md:h-5 text-blue-400" />
-                  Technologies Used
+                  Tecnologías Utilizadas
                 </h3>
                 {project.TechStack.length > 0 ? (
                   <div className="flex flex-wrap gap-2 md:gap-3">
@@ -214,7 +214,7 @@ const ProjectDetails = () => {
                     ))}
                   </div>
                 ) : (
-                  <p className="text-sm md:text-base text-gray-400 opacity-50">No technologies added.</p>
+                  <p className="text-sm md:text-base text-gray-400 opacity-50">Sin Tecnonlogía Agregada.</p>
                 )}
               </div>
             </div>
@@ -236,7 +236,7 @@ const ProjectDetails = () => {
               <div className="bg-white/[0.02] backdrop-blur-xl rounded-2xl p-8 border border-white/10 space-y-6 hover:border-white/20 transition-colors duration-300 group">
                 <h3 className="text-xl font-semibold text-white/90 flex items-center gap-3">
                   <Star className="w-5 h-5 text-yellow-400 group-hover:rotate-[20deg] transition-transform duration-300" />
-                  Key Features
+                  Características Principales
                 </h3>
                 {project.Features.length > 0 ? (
                   <ul className="list-none space-y-2">
@@ -245,7 +245,7 @@ const ProjectDetails = () => {
                     ))}
                   </ul>
                 ) : (
-                  <p className="text-gray-400 opacity-50">No features added.</p>
+                  <p className="text-gray-400 opacity-50">Sin Característica Agregada</p>
                 )}
               </div>
             </div>
