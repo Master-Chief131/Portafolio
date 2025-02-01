@@ -45,7 +45,7 @@ const ToggleButton = ({ onClick, isShowingMore }) => (
     "
   >
     <span className="relative z-10 flex items-center gap-2">
-      {isShowingMore ? "See Less" : "See More"}
+      {isShowingMore ? "Ver Menos" : "Ver Más"}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="16"
@@ -101,18 +101,18 @@ function a11yProps(index) {
 }
 
 const techStacks = [
+  { icon: "python.svg", language: "Python" },
+  { icon: "java.svg", language: "Java" },
+  { icon: "springboot.svg", language: "Spring Boot" },
   { icon: "html.svg", language: "HTML" },
   { icon: "css.svg", language: "CSS" },
   { icon: "javascript.svg", language: "JavaScript" },
-  { icon: "tailwind.svg", language: "Tailwind CSS" },
   { icon: "reactjs.svg", language: "ReactJS" },
-  { icon: "vite.svg", language: "Vite" },
   { icon: "nodejs.svg", language: "Node JS" },
   { icon: "bootstrap.svg", language: "Bootstrap" },
+  { icon: "docker.svg", language: "Docker" },
+  { icon: "mysql.svg", language: "MySQL" },
   { icon: "firebase.svg", language: "Firebase" },
-  { icon: "MUI.svg", language: "Material UI" },
-  { icon: "vercel.svg", language: "Vercel" },
-  { icon: "SweetAlert.svg", language: "SweetAlert2" },
 ];
 
 export default function FullWidthTabs() {
@@ -192,12 +192,12 @@ export default function FullWidthTabs() {
             backgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }}>
-            Portfolio Showcase
+            Presentación de Portafolio
           </span>
         </h2>
         <p className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2">
-          Explore my journey through projects, certifications, and technical expertise. 
-          Each section represents a milestone in my continuous learning path.
+          Explora mi recorrido a traves de los proyectos, certificados y experiencias que he tenido. Cada
+          proyecto y certificado ha sido una oportunidad para aprender y mejorar mis habilidades.
         </p>
       </div>
 
@@ -273,17 +273,17 @@ export default function FullWidthTabs() {
           >
             <Tab
               icon={<Code className="mb-2 w-5 h-5 transition-all duration-300" />}
-              label="Projects"
+              label="Proyectos"
               {...a11yProps(0)}
             />
             <Tab
               icon={<Award className="mb-2 w-5 h-5 transition-all duration-300" />}
-              label="Certificates"
+              label="Certificados"
               {...a11yProps(1)}
             />
             <Tab
               icon={<Boxes className="mb-2 w-5 h-5 transition-all duration-300" />}
-              label="Tech Stack"
+              label="Tecnologías"
               {...a11yProps(2)}
             />
           </Tabs>
