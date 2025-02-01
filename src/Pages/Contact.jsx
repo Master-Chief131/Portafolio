@@ -139,7 +139,7 @@ const ContactPage = () => {
               {/* FormSubmit Configuration */}
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="https://portafolio-e76fa.web.app/thank-you" />
+              <input type="hidden" name="_next" value="https://luis-marquez.site/thank-you" />
 
               <div
                 data-aos="fade-up"
