@@ -20,11 +20,13 @@ node_modules
 *.njsproj
 *.sln
 *.sw?
+
+# Firebase
 .firebase
 
 # Ignorar archivos de entorno
 .env
 
 # Build directories
-/build
-/dist
+build
+dist
