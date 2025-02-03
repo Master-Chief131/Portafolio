@@ -28,5 +28,5 @@ node_modules
 .env
 
 # Build directories
-build
+/build
 dist
