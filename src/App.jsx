@@ -1,16 +1,18 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import "./index.css";
-import Home from "./Pages/Home";
-import About from "./Pages/About";
-import AnimatedBackground from "./components/Background";
-import Navbar from "./components/Navbar";
-import Portofolio from "./Pages/Portofolio";
-import ContactPage from "./Pages/Contact";
-import ProjectDetails from "./components/ProjectDetail";
-import WelcomeScreen from "./Pages/WelcomeScreen";
-import ThankYouPage from "./Pages/ThankYou";
 import { AnimatePresence } from 'framer-motion';
+
+// mejorar la carga de la página con lazy loading
+const Home = React.lazy(() => import('./Pages/Home'));
+const About = React.lazy(() => import('./Pages/About'));
+const AnimatedBackground = React.lazy(() => import('./components/Background'));
+const Navbar = React.lazy(() => import('./components/Navbar'));
+const Portofolio = React.lazy(() => import('./Pages/Portofolio'));
+const ContactPage = React.lazy(() => import('./Pages/Contact'));
+const ProjectDetails = React.lazy(() => import('./components/ProjectDetail'));
+const WelcomeScreen = React.lazy(() => import('./Pages/WelcomeScreen'));
+const ThankYouPage = React.lazy(() => import('./Pages/ThankYou'));
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
@@ -70,11 +72,13 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
-        <Route path="/project/:id" element={<ProjectPageLayout />} />
-        <Route path="/thank-you" element={<ThankYouPage />} />
-      </Routes>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
+          <Route path="/project/:id" element={<ProjectPageLayout />} />
+          <Route path="/thank-you" element={<ThankYouPage />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }
