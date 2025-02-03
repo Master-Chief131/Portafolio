@@ -4,12 +4,12 @@ import { getStorage } from "firebase/storage";
 import { collection, addDoc } from "@firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDl6cyNeG1p0wH7ToWvrRMOmFdGtVctyOQ",
-    authDomain: "portafolio-e76fa.firebaseapp.com",
-    projectId: "portafolio-e76fa",
-    storageBucket: "portafolio-e76fa.firebasestorage.app",
-    messagingSenderId: "890817433268",
-    appId: "1:943108748382:web:d652c48fcd25aac4b3f0cf"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 // Initialize with a unique name
