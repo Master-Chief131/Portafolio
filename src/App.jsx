@@ -60,7 +60,7 @@ const ProjectPageLayout = () => (
           <a href="https://flowbite.com/" className="hover:underline">
             Luis Márquez
           </a>
-          . All Rights Reserved.
+          . Todos los derechos reservados.
         </span>
       </center>
     </footer>
