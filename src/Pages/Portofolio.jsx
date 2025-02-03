@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, Suspense } from "react";
 import { db, collection } from "../firebase";
 import { getDocs } from "firebase/firestore";
 import PropTypes from "prop-types";
@@ -9,12 +9,13 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import CardProject from "../components/CardProject";
-import TechStackIcon from "../components/TechStackIcon";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Certificate from "../components/Certificate";
 import { Code, Award, Boxes } from "lucide-react";
+
+const CardProject = React.lazy(() => import('../components/CardProject'));
+const TechStackIcon = React.lazy(() => import('../components/TechStackIcon'));
+const Certificate = React.lazy(() => import('../components/Certificate'));
 
 // Separate ShowMore/ShowLess button component
 const ToggleButton = ({ onClick, isShowingMore }) => (
@@ -303,13 +304,15 @@ export default function FullWidthTabs() {
                     data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
                     data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
                   >
-                    <CardProject
-                      Img={project.Img}
-                      Title={project.Title}
-                      Description={project.Description}
-                      Link={project.Link}
-                      id={project.id}
-                    />
+                    <Suspense fallback={<div>Loading Card Project...</div>}>
+                      <CardProject
+                        Img={project.Img}
+                        Title={project.Title}
+                        Description={project.Description}
+                        Link={project.Link}
+                        id={project.id}
+                      />
+                    </Suspense>
                   </div>
                 ))}
               </div>
@@ -333,7 +336,9 @@ export default function FullWidthTabs() {
                     data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
                     data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
                   >
-                    <Certificate ImgSertif={certificate.Img} />
+                    <Suspense fallback={<div>Loading Certificate...</div>}>
+                      <Certificate ImgSertif={certificate.Img} />
+                    </Suspense>
                   </div>
                 ))}
               </div>
@@ -357,7 +362,9 @@ export default function FullWidthTabs() {
                     data-aos={index % 3 === 0 ? "fade-up-right" : index % 3 === 1 ? "fade-up" : "fade-up-left"}
                     data-aos-duration={index % 3 === 0 ? "1000" : index % 3 === 1 ? "1200" : "1000"}
                   >
-                    <TechStackIcon TechStackIcon={stack.icon} Language={stack.language} />
+                    <Suspense fallback={<div>Loading Tech Stack Icon...</div>}>
+                      <TechStackIcon TechStackIcon={stack.icon} Language={stack.language} />
+                    </Suspense>
                   </div>
                 ))}
               </div>
