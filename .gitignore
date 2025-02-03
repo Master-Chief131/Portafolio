@@ -22,7 +22,7 @@ node_modules
 *.sw?
 
 # Firebase
-.firebase
+# .firebase
 
 # Ignorar archivos de entorno
 .env
