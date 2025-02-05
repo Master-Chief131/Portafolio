@@ -13,6 +13,7 @@ const ContactPage = React.lazy(() => import('./Pages/Contact'));
 const ProjectDetails = React.lazy(() => import('./components/ProjectDetail'));
 const WelcomeScreen = React.lazy(() => import('./Pages/WelcomeScreen'));
 const ThankYouPage = React.lazy(() => import('./Pages/ThankYou'));
+const Object3D = React.lazy(() => import('./Pages/Object-3d'));
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
   return (
@@ -77,6 +78,7 @@ function App() {
           <Route path="/" element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />} />
           <Route path="/project/:id" element={<ProjectPageLayout />} />
           <Route path="/thank-you" element={<ThankYouPage />} />
+          <Route path="/object-3d" element={<Object3D />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
