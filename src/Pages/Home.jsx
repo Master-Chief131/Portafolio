@@ -1,8 +1,10 @@
-import React, { useState, useEffect, useCallback, memo } from "react"
+import React, { useState, useEffect, useCallback, memo, Suspense } from "react"
 import { Github, Linkedin, Mail, ExternalLink, Instagram, Sparkles } from "lucide-react"
 import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+
+const Object3D = React.lazy(() => import('./Object-3d'));
 
 // Memoized Components
 const StatusBadge = memo(() => (
@@ -143,7 +145,7 @@ const Home = () => {
 
   // Lottie configuration
   const lottieOptions = {
-    src: "https://lottie.host/58753882-bb6a-49f5-a2c0-950eda1e135a/NLbpVqGegK.lottie",
+    src: "https://lottie.host/fa965192-2746-44bf-be5d-bcd3a442c157/MCXrxJOp4a.lottie",
     loop: true,
     autoplay: true,
     rendererSettings: {
@@ -215,15 +217,22 @@ const Home = () => {
               onMouseLeave={() => setIsHovering(false)}
               data-aos="fade-left"
               data-aos-delay="600">
+
+                {/* <div className="relative w-full h-full max-w-[750px] overflow-visible transform scale-125">
+                  <div className="absolute right-0 w-full h-full" style={{ right: '-50px' }}>
+                    <Suspense fallback={<div>Cargando modelo...</div>}>
+                      <Object3D />
+                    </Suspense>
+                  </div>
+                </div> */}
+
               <div className="relative w-full opacity-90">
                 <div className={`absolute inset-0 bg-gradient-to-r from-[#6366f1]/10 to-[#a855f7]/10 rounded-3xl blur-3xl transition-all duration-700 ease-in-out ${
-                  isHovering ? "opacity-50 scale-105" : "opacity-20 scale-100"
-                }`}>
+                  isHovering ? "opacity-50 scale-105" : "opacity-20 scale-100" }`}>
                 </div>
 
                 <div className={`relative z-10 w-full opacity-90 transform transition-transform duration-500 ${
-                  isHovering ? "scale-105" : "scale-100"
-                }`}>
+                  isHovering ? "scale-105" : "scale-100" }`}>
                   <DotLottieReact {...lottieOptions} />
                 </div>
 
@@ -235,7 +244,9 @@ const Home = () => {
                   }`}>
                   </div>
                 </div>
+
               </div>
+              
             </div>
           </div>
         </div>
